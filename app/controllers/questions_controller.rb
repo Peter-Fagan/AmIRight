@@ -15,6 +15,8 @@ class QuestionsController < ApplicationController
   # GET /questions/new
   def new
     @question = Question.new
+    @question.answers.build
+    # @answer = Answer.new(:question_id => @question.id)
   end
 
   # GET /questions/1/edit
@@ -24,7 +26,10 @@ class QuestionsController < ApplicationController
   # POST /questions
   # POST /questions.json
   def create
-    @question = Question.new(question_params)
+    @question = current_user.questions.create(question_params)
+    params[:answers].each do |answer|
+      @question.answers.create( :content => answer ) if answer.length > 0
+    end
 
     respond_to do |format|
       if @question.save
@@ -69,6 +74,7 @@ class QuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
+      # binding.pry
       params.require(:question).permit(:content)
     end
 end

@@ -1,25 +1,30 @@
 <%= form_for(question) do |f| %>
-  <% if question.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(question.errors.count, "error") %> prohibited this question from being saved:</h2>
+    <% if question.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(question.errors.count, "error") %>
+            prohibited this question from being saved:</h2>
 
-      <ul>
-      <% question.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+            <ul>
+                <% question.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <h2><%= "What do you need answered?" %></h2>
+    <div class="field">
+        <%= f.text_area :content %>
     </div>
-  <% end %>
 
-  <h2><%= "What do you need answered?" %></h2>
-  <div class="field">
-    <%= f.text_area :content %>
-  </div>
+    <p class="addAnswer">Add new answer</p>
+    <!-- Every time someone clicks Add New Answer, duplicate this text_field_tag -->
+    <div class="answers">
+        <%= text_field_tag "answers[]", nil, :class => 'base_answer' %>
+    </div>
 
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-
+    <div class="actions">
+        <%= f.submit %>
+    </div>
 
 <% end %>

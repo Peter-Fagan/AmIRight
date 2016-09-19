@@ -12,4 +12,5 @@
 class Question < ApplicationRecord
   has_many :answers
   belongs_to :user
+  accepts_nested_attributes_for :answers
 end
