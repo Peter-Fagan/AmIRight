@@ -32,4 +32,3 @@ q2.answers << a3 << a4
 
 p u1.questions
 p q1.answers
-p u1.q2.answers
