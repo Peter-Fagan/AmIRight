@@ -18,11 +18,11 @@ app.InputView = Backbone.View.extend({
 
     createQuestion: function(e) {
         var newQuestion = new app.Question();
-        var userInputQuestion = this.$el.find("inputView").val();
+        var userInputQuestion = this.$el.find("textarea").val();
         newQuestion.set("content", userInputQuestion );
         newQuestion.save();
         //Add new question to collection - hense 'questions'
-        app.questions.add(newQuestion);
+        // app.questions.add(newQuestion);
         // Empty the contents of the textarea and put the browser focus back on that area.
         this.$el.find("inputView").val('').focus();
     },

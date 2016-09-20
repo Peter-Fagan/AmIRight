@@ -11,7 +11,7 @@ app.PageRouter = Backbone.Router.extend({
     },
 
     initializeQuestions: function() {
-        console.log("initialized")
+        console.log("initialized");
         app.questions = new app.Questions();
         app.questions.fetch().done(function() {
             console.log("Questions complete");

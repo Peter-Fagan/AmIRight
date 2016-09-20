@@ -27,8 +27,10 @@ class QuestionsController < ApplicationController
   # POST /questions.json
   def create
     @question = current_user.questions.create(question_params)
-    params[:answers].each do |answer|
-      @question.answers.create( :content => answer ) if answer.length > 0
+    if params[:answers].present?
+      params[:answers].each do |answer|
+        @question.answers.create( :content => answer ) if answer.length > 0
+      end
     end
 
     respond_to do |format|
