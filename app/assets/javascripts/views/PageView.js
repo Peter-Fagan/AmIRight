@@ -8,13 +8,8 @@ app.PageView = Backbone.View.extend({
         var pageViewTemplate = $("#pageViewTemplate").html();
         this.$el.html(pageViewTemplate);
 
-        this.collection.each(function ( question ) {
-            var inputView = new app.InputView({ model: question });
-            inputView.render();
-
-        })
-
-
+        var inputView = new app.InputView();
+        inputView.render();
     }
 
 });

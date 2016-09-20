@@ -1,7 +1,7 @@
 var app = app || {};
 
 app.InputView = Backbone.View.extend({
-    el: "#inputView",
+    el: "#inputQuestion",
 
     events: {
         'click button': 'createQuestion',
@@ -28,7 +28,7 @@ app.InputView = Backbone.View.extend({
     },
 
     render: function() {
-        var inputViewTemplate = $("#inputViewTemplate").html();
+        var inputViewTemplate = $("#inputView").html();
         this.$el.html(inputViewTemplate);
         this.$el.find('inputQuestion').focus();
     }
