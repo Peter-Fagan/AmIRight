@@ -8,15 +8,23 @@ app.PageRouter = Backbone.Router.extend({
 
     showQuestion: function (id) {
         console.log(id);
+        // alert("You are on /questions/" + id + ". Show a view now!");
+        $("body").html("You are on /questions/" + id + ". Show a view now!");
     },
 
     initializeQuestions: function() {
-        console.log("initialized");
         app.questions = new app.Questions();
         app.questions.fetch().done(function() {
             console.log("Questions complete");
         });
         // var pv = new app.PageView();
         // pv.render();
+    // },
+    //
+    // initializeAnswers: function() {
+    //     app.answers = new app.Answers();
+    //     app.answers.fetch().done(function() {
+    //         console.log("Answers complete");
+    //     });
     }
 });
