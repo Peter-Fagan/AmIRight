@@ -15,7 +15,6 @@ app.InputView = Backbone.View.extend({
             $newInput.val('');
             this.$el.find(".answers").append( $newInput );
         } else {
-            alert("Too many answers!");
             $(".newAnswer").hide();
         }
     },
@@ -40,24 +39,14 @@ app.InputView = Backbone.View.extend({
             content: userInputQuestion,
             answers: answers
         });
-        console.log(newQuestion.toJSON());
-
-        // Set all attributes for the answers here
+        // console.log(newQuestion.toJSON());
         newQuestion.save().done(function () {
-            alert("This has been saved!");
+            console.log("This has been saved!");
+            $(".answer").val("");
+            $(".question").val("");
         });
-        //Add new question to collection - hense 'questions'
-        // Empty the contents of the textarea and put the browser focus back on that area.
         this.$el.find("inputView").val('').focus();
     },
-
-    // createAnswer: function(e) {
-    //     var newAnswer = new app.Answer();
-    //     var userInputAnswer = this.$el.find(".answer").val();
-    //     newAnswer.set("content", userInputAnswer )//, ("question_id", this.$el.find(".question"));
-    //     newAnswer.save();
-    //     this.$el.find("inputView").val('').focus();
-    // },
 
     render: function() {
         var inputViewTemplate = $("#inputView").html();

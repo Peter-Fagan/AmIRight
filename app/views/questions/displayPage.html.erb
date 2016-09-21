@@ -1,17 +1,5 @@
 <div id="page">
-    <h1>Questions</h1>
 </div>
-
-<script type="underscore/template" id="inputView">
-    <textarea class="question" placeholder="Write your question here"></textarea>
-    <br/>
-    <p class="newAnswer">Add a new answer</p>
-    <div class="answers">
-        <input type="text" class="answer" placeholder="Answer here"></textarea>
-        <input type="text" class="answer" placeholder="Answer here"></textarea>
-    </div>
-    <button>Submit</button>
-</script>
 
 <script type="underscore/template" id="pageViewTemplate">
     <h1>Am I Right? </h1>
@@ -19,5 +7,22 @@
     <div id="inputQuestion"></div>
 
     <ul id="questions"></ul>
+
+    <div id="outputQuestion"></div>
+
+    <ul id="answers"></ul>
+
+</script>
+
+<script type="underscore/template" id="inputView">
+    <textarea class="question" placeholder="Write your question here"></textarea>
+    <br/>
+    <div class="answers">
+        <input type="text" class="answer" placeholder="Answer here"></textarea>
+        <input type="text" class="answer" placeholder="Answer here"></textarea>
+    </div>
+    <br/>
+    <button>Submit</button>
+    <p class="newAnswer">Add a new answer</p>
 
 </script>
