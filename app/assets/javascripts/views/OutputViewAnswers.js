@@ -18,17 +18,17 @@ app.OutputViewAnswers = Backbone.View.extend({
         answer.set({
             value: parseInt(answer.get("value")) + 1
         });
-        answer.save();
-        // var votes = this.collection.get('value');
-        // votes += 1;
-        // console.log(votes);
-        // console.log("click click");
-        // console.log( id, answer.toJSON() );
+        var view = this;
+        answer.save().done(function () {
+            view.render();
+        });
     },
 
     render: function() {
+        this.$el.html('');
         _.each(this.collection, function (answer) {
             var content = answer.get("content");
+            var votes = answer.get("value");
 
             var $li = $("<li></li>").text(content);
             $li.data({
@@ -36,7 +36,7 @@ app.OutputViewAnswers = Backbone.View.extend({
             });
 
             $("#answers").append($li);
-            // $("#answers").append( value );
+            $("#answers").append( "<span>" votes );
             $("#answers").append( "<br />" );
             console.log( answer.toJSON() );
         });
