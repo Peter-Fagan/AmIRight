@@ -36,7 +36,7 @@ app.OutputViewAnswers = Backbone.View.extend({
             });
 
             $("#answers").append($li);
-            $("#answers").append( "<span>" votes );
+            $("#answers").append( "<span>" + votes + "</span>" );
             $("#answers").append( "<br />" );
             console.log( answer.toJSON() );
         });
