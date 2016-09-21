@@ -11,9 +11,19 @@ app.PageRouter = Backbone.Router.extend({
         $("#inputQuestion").remove();
         $("#questions").remove();
         var ov = new app.OutputView({
-            model: app.questions.get(id)
+            model: app.questions.get(id),
         });
         ov.render();
+
+        app.answers = new app.Answers();
+        app.answers.fetch().done(function () {
+            var ovA = new app.OutputViewAnswers({
+                collection: app.answers.where({
+                    question_id: parseInt(id)
+                })
+            });
+            ovA.render();
+        });
 
         // remove any divs that might be on the page that you don't want displaying
         // create a new instance of some kind of view that shows a question

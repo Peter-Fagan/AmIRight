@@ -10,8 +10,8 @@ $(document).ready(function() {
         Backbone.history.start();
     // });
 
-    window.setInterval( function () {
-        app.questions.fetch();
-    }, 3000);
+    // window.setInterval( function () {
+    //     app.questions.fetch();
+    // }, 3000);
 
 });
