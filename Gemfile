@@ -34,6 +34,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry-rails'
   gem 'annotate'
+  gem 'chart-js-rails', '~> 0.1.0'
 end
 
 group :development do

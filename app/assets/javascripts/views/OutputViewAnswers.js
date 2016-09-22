@@ -40,6 +40,10 @@ app.OutputViewAnswers = Backbone.View.extend({
             $("#answers").append( "<br />" );
             console.log( answer.toJSON() );
         });
+
+        var chartView = new app.ChartView();
+        chartView.createChart();
+        chartView.render();
     }
 });
 

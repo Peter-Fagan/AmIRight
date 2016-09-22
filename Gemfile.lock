@@ -45,6 +45,8 @@ GEM
     bcrypt (3.1.11)
     builder (3.2.2)
     byebug (9.0.5)
+    chart-js-rails (0.1.0)
+      railties (> 3.1)
     coderay (1.1.1)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
@@ -180,6 +182,7 @@ PLATFORMS
 DEPENDENCIES
   annotate
   byebug
+  chart-js-rails (~> 0.1.0)
   coffee-rails (~> 4.2)
   devise
   jbuilder (~> 2.5)
