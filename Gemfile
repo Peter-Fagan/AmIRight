@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'chart-js-rails', '~> 0.1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use postgresql as the database for Active Record
@@ -34,11 +34,10 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry-rails'
   gem 'annotate'
-  gem 'chart-js-rails', '~> 0.1.0'
 end
 
 group :production do
-    gem 'rails_12factor'
+  gem 'rails_12factor'
 end
 
 group :development do
