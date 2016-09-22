@@ -26,9 +26,15 @@ app.OutputViewAnswers = Backbone.View.extend({
 
     render: function() {
         this.$el.html('');
+        var contentsArray = [];
+        var votesArray = [];
         _.each(this.collection, function (answer) {
             var content = answer.get("content");
             var votes = answer.get("value");
+
+            contentsArray.push(content);
+
+            votesArray.push(votes);
 
             var $li = $("<li></li>").text(content);
             $li.data({
@@ -41,8 +47,9 @@ app.OutputViewAnswers = Backbone.View.extend({
             console.log( answer.toJSON() );
         });
 
+
         var chartView = new app.ChartView();
-        chartView.createChart();
+        chartView.createChart(contentsArray, votesArray);
         chartView.render();
     }
 });
