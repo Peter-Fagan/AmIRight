@@ -1,33 +1,36 @@
-<div id="page">
+<div id="page" class="blue accent-2">
 </div>
 
 <script type="underscore/template" id="pageViewTemplate">
-    <h1>Am I Right? </h1>
+<div class="row blue lighten-4">
+    <div class="col s8 offset-s2">
+        <h1 class="card-panel blue white-text" >Am I Right? </h1>
 
-    <div id="inputQuestion"></div>
+        <div id="inputQuestion"></div>
 
-    <ul id="questions"></ul>
+        <ul id="questions"></ul>
 
-    <div id="outputQuestion"></div>
+        <div id="outputQuestion"></div>
 
-    <ul id="answers"></ul>
+        <ul id="answers"></ul>
 
-    <canvas id="myChart" width="200" height="200"></canvas>
-
+        <canvas id="myChart" max-width="200" max-height="200"></canvas>
+    </div>
+</div>
 </script>
 
 
 
 <script type="underscore/template" id="inputView">
-    <textarea class="question" placeholder="Write your question here"></textarea>
+    <textarea class="question white" placeholder="Write your question here"></textarea>
     <br/>
-    <div class="answers">
+    <div class="answers blue lighten-5">
         <input type="text" class="answer" placeholder="Answer here"></textarea>
         <input type="text" class="answer" placeholder="Answer here"></textarea>
     </div>
     <br/>
-    <button>Submit</button>
-    <p class="newAnswer">Add a new answer</p>
+    <button class="waves-effect waves-light btn blue darken-2 submit">Submit</button>
+    <button class="waves-effect waves-light btn blue darken-2 newAnswer">Add a new answer</button>
 
 </script>
 

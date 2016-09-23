@@ -4,9 +4,9 @@ app.InputView = Backbone.View.extend({
     el: "#inputQuestion",
 
     events: {
-        'click button': 'createQuestion',
+        'click button.submit': 'createQuestion',
         'keydown textarea': 'checkForEnter',
-        'click p.newAnswer': 'createNewInput'
+        'click button.newAnswer': 'createNewInput'
     },
 
     createNewInput: function () {
