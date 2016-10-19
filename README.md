@@ -1,7 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This Project was a collaboration between Tomas Haffenden and Peter Fagan for our Web Development Immersive course.
 
 Things you may want to cover:
 
